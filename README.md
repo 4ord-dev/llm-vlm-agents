@@ -1,5 +1,7 @@
 # My Agent Project
 
+Student: Nikita Breslavskyi
+
 Student project for **Designing LLM/VLM Agents**.
 
 ## Setup
