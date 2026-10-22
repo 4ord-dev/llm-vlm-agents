@@ -38,24 +38,47 @@ Meeting 1.
 - **Success criteria:** On a fixed set of owner-written cases, the agent answers the goal, uses tools instead of guessing, and cites virtual store paths or image fields it used. A case fails if a tool resolves or executes outside a mount, or if the answer cannot be checked against the store.
 - **Non-goals and safety boundaries:** This is a personal machine agent, not a public service and not a jailbreak box. File and shell tools accept only virtual paths and stay inside their host mounts. Traces and answers use virtual paths, not raw home directories. Voice, keys, and personal data live in local env and mounted stores; they are not committed to the public git remote. The model API is the only required network call. No unsolicited scanning of the whole disk.
 
-## Starter Code
+## Code
 
-The repository contains only:
-
-- `src/agent_project/llm.py` — an OpenRouter client and a mock client. A live
-  call returns the text, tool calls, finish reason, model, provider, latency,
-  and token usage with cost. Requests time out after 60 seconds and replies are
+- `src/agent_project/llm.py` — OpenRouter client and mock client. A live call
+  returns the text, tool calls, finish reason, model, provider, latency, and
+  token usage with cost. Requests time out after 60 seconds and replies are
   limited to 1,024 tokens. If a provider returns an empty reply instead of the
   model's answer, the client retries once on another provider.
-  `image_part(path)` adds an image to a message;
-- `src/agent_project/tracing.py` — a JSON Lines trace helper;
-- `tests/test_setup.py` — setup checks;
-- `data/` — approved project data;
-- `traces/` — generated traces, ignored by Git; and
+  `image_part(path)` adds an image to a message.
+- `src/agent_project/agent.py` — the bounded tool loop.
+- `src/agent_project/mounts.py` — virtual path resolution onto host mounts.
+- `src/agent_project/tools.py` — tool schemas and dispatch.
+- `src/agent_project/tracing.py` — a JSON Lines trace helper.
+- `data/` — sample assistant store: `inbox.md`, `agenda.json`,
+  `preferences.txt`, `projects.md`, `screen.png`.
+- `traces/` — generated traces, ignored by Git.
 - `evidence/` — the traces and results you submit.
 
-The agent loop, domain tools, state, retrieval, multimodal behavior, evaluation,
-and safety controls are intentionally left for you to design and implement.
+## Running the agent
+
+```bash
+uv run python -m agent_project "What is on my agenda tonight?"
+uv run python -m agent_project "What is on the captured screen?" --image /data/screen.png
+uv run python -m agent_project "Where is the printer?"
+```
+
+The first command uses `list_store`, `search_store`, and `read_file` on `/data`.
+The second attaches `data/screen.png` so the model can call `inspect_image`
+and `image_facts`. A run stops on an answer, after 12 model steps, at USD 0.10, if the
+same tool call repeats three times, or if the model returns an empty reply.
+Traces go to `traces/agent.jsonl` and use virtual paths only.
+
+## Tools
+
+- `list_store` — list a virtual path such as `/data`
+- `search_store` — match a query against names and text
+- `read_file` — read a text file by virtual path
+- `inspect_image` — load a mounted image for the next step
+- `image_facts` — record a short typed list of facts from that image
+
+File and image arguments are virtual paths only. Host paths and `..` are
+rejected. The default mount is this repository's `data/` folder as `/data`.
 
 ## Course Limits
 
@@ -82,6 +105,7 @@ and safety controls are intentionally left for you to design and implement.
 ```bash
 uv run pytest
 uv run ruff check .
+uv run python -m agent_project "What is on my agenda tonight?"
 ```
 
 Use the assignments published on the course website as the source of truth.

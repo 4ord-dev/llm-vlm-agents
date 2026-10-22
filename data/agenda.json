@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-22",
+  "blocks": [
+    {"time": "19:00", "title": "Study block", "place": "desk"},
+    {"time": "21:00", "title": "Call Alex", "place": "voice"}
+  ]
+}
