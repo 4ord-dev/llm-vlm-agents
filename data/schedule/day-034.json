@@ -1,0 +1,35 @@
+{
+  "date": "2026-05-08",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "headset mute check with Marek",
+      "place": "kitchen table"
+    },
+    {
+      "time": "10:00",
+      "title": "standing-desk height with Samir",
+      "place": "workshop bench"
+    },
+    {
+      "time": "12:00",
+      "title": "window shade position with Priya",
+      "place": "reading room"
+    },
+    {
+      "time": "14:00",
+      "title": "coffee restock with Noah",
+      "place": "campus hall"
+    },
+    {
+      "time": "16:00",
+      "title": "exam outline draft with Helena",
+      "place": "balcony"
+    },
+    {
+      "time": "18:00",
+      "title": "router reboot window with Ivan",
+      "place": "studio corner"
+    }
+  ]
+}

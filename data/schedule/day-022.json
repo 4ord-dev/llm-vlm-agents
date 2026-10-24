@@ -1,0 +1,35 @@
+{
+  "date": "2026-05-23",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "diagram sketch with Chen",
+      "place": "balcony"
+    },
+    {
+      "time": "10:00",
+      "title": "citation checklist with Olena",
+      "place": "studio corner"
+    },
+    {
+      "time": "12:00",
+      "title": "audio level sheet with Marek",
+      "place": "desk"
+    },
+    {
+      "time": "14:00",
+      "title": "chair wheel repair with Samir",
+      "place": "library"
+    },
+    {
+      "time": "16:00",
+      "title": "paper tray order with Priya",
+      "place": "kitchen table"
+    },
+    {
+      "time": "18:00",
+      "title": "weekend study plan with Noah",
+      "place": "workshop bench"
+    }
+  ]
+}

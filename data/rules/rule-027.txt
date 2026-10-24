@@ -1,0 +1,7 @@
+# House rule 027
+
+- Rule: Use the virtual store path when pointing at a file in an answer.
+- Asked by: Noah
+- Applies at: workshop bench
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name workshop bench.

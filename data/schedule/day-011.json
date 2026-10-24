@@ -1,0 +1,35 @@
+{
+  "date": "2026-06-12",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "flash-card deck with Jordan",
+      "place": "workshop bench"
+    },
+    {
+      "time": "10:00",
+      "title": "power-strip labels with Chen",
+      "place": "reading room"
+    },
+    {
+      "time": "12:00",
+      "title": "notebook index with Olena",
+      "place": "campus hall"
+    },
+    {
+      "time": "14:00",
+      "title": "calendar hold list with Marek",
+      "place": "balcony"
+    },
+    {
+      "time": "16:00",
+      "title": "cable tray cleanup with Samir",
+      "place": "studio corner"
+    },
+    {
+      "time": "18:00",
+      "title": "font rendering sample with Priya",
+      "place": "desk"
+    }
+  ]
+}

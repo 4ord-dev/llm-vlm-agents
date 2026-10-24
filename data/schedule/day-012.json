@@ -1,0 +1,35 @@
+{
+  "date": "2026-01-13",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "power-strip labels with Chen",
+      "place": "reading room"
+    },
+    {
+      "time": "10:00",
+      "title": "notebook index with Olena",
+      "place": "campus hall"
+    },
+    {
+      "time": "12:00",
+      "title": "calendar hold list with Marek",
+      "place": "balcony"
+    },
+    {
+      "time": "14:00",
+      "title": "cable tray cleanup with Samir",
+      "place": "studio corner"
+    },
+    {
+      "time": "16:00",
+      "title": "font rendering sample with Priya",
+      "place": "desk"
+    },
+    {
+      "time": "18:00",
+      "title": "local backup log with Noah",
+      "place": "library"
+    }
+  ]
+}

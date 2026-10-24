@@ -1,0 +1,35 @@
+{
+  "date": "2026-03-09",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "exam outline draft with Helena",
+      "place": "desk"
+    },
+    {
+      "time": "10:00",
+      "title": "router reboot window with Ivan",
+      "place": "library"
+    },
+    {
+      "time": "12:00",
+      "title": "repo branch map with Mina",
+      "place": "kitchen table"
+    },
+    {
+      "time": "14:00",
+      "title": "flash-card deck with Jordan",
+      "place": "workshop bench"
+    },
+    {
+      "time": "16:00",
+      "title": "power-strip labels with Chen",
+      "place": "reading room"
+    },
+    {
+      "time": "18:00",
+      "title": "notebook index with Olena",
+      "place": "campus hall"
+    }
+  ]
+}

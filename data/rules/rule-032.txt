@@ -1,0 +1,7 @@
+# House rule 032
+
+- Rule: Write measurements with the unit beside the number.
+- Asked by: Chen
+- Applies at: desk
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name desk.

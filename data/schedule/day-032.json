@@ -1,0 +1,35 @@
+{
+  "date": "2026-03-06",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "course reading queue with Chen",
+      "place": "desk"
+    },
+    {
+      "time": "10:00",
+      "title": "keyboard layout notes with Olena",
+      "place": "library"
+    },
+    {
+      "time": "12:00",
+      "title": "headset mute check with Marek",
+      "place": "kitchen table"
+    },
+    {
+      "time": "14:00",
+      "title": "standing-desk height with Samir",
+      "place": "workshop bench"
+    },
+    {
+      "time": "16:00",
+      "title": "window shade position with Priya",
+      "place": "reading room"
+    },
+    {
+      "time": "18:00",
+      "title": "coffee restock with Noah",
+      "place": "campus hall"
+    }
+  ]
+}

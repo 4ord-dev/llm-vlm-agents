@@ -1,0 +1,7 @@
+# House rule 006
+
+- Rule: Record who asked before recording what they asked.
+- Asked by: Priya
+- Applies at: balcony
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name balcony.

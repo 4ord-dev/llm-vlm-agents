@@ -1,0 +1,35 @@
+{
+  "date": "2026-03-21",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "package update notes with Mina",
+      "place": "reading room"
+    },
+    {
+      "time": "10:00",
+      "title": "office-hours questions with Jordan",
+      "place": "campus hall"
+    },
+    {
+      "time": "12:00",
+      "title": "diagram sketch with Chen",
+      "place": "balcony"
+    },
+    {
+      "time": "14:00",
+      "title": "citation checklist with Olena",
+      "place": "studio corner"
+    },
+    {
+      "time": "16:00",
+      "title": "audio level sheet with Marek",
+      "place": "desk"
+    },
+    {
+      "time": "18:00",
+      "title": "chair wheel repair with Samir",
+      "place": "library"
+    }
+  ]
+}

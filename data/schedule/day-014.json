@@ -1,0 +1,35 @@
+{
+  "date": "2026-03-15",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "calendar hold list with Marek",
+      "place": "balcony"
+    },
+    {
+      "time": "10:00",
+      "title": "cable tray cleanup with Samir",
+      "place": "studio corner"
+    },
+    {
+      "time": "12:00",
+      "title": "font rendering sample with Priya",
+      "place": "desk"
+    },
+    {
+      "time": "14:00",
+      "title": "local backup log with Noah",
+      "place": "library"
+    },
+    {
+      "time": "16:00",
+      "title": "reading-lamp angle with Helena",
+      "place": "kitchen table"
+    },
+    {
+      "time": "18:00",
+      "title": "whiteboard photo list with Ivan",
+      "place": "workshop bench"
+    }
+  ]
+}

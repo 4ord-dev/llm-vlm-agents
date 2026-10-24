@@ -21,6 +21,12 @@ from agent_project.llm import ModelClient, image_part
 from agent_project.mounts import Store
 from agent_project.tools import TOOL_SPECS, execute_tool
 from agent_project.tracing import append_trace
+from agent_project.verbose import (
+    report_action,
+    report_context,
+    report_stop,
+    report_tool,
+)
 
 SYSTEM_PROMPT = """You are a personal desk assistant on one machine.
 Use tools to inspect mounted stores. Never guess file or image contents.
@@ -110,15 +116,23 @@ def run_agent(
     attached_images: list[str] | None = None,
     max_steps: int = MAX_MODEL_STEPS,
     max_cost_usd: float = MAX_RUN_COST_USD,
+    verbose: bool = False,
+    messages: list[dict[str, Any]] | None = None,
 ) -> AgentResult:
-    """Run the tool loop until an answer or a hard stop."""
+    """Run the tool loop until an answer or a hard stop.
+
+    Pass the same messages list on later goals to keep the agent context.
+    Verbose runs print each step to stderr: cost so far, model context,
+    and the action taken. Image bytes are omitted.
+    """
     if max_steps < 1:
         max_steps = 1
     images = list(attached_images or [])
-    messages: list[dict[str, Any]] = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        _user_goal_message(goal, store, images),
-    ]
+    if messages is None:
+        messages = []
+    if not messages:
+        messages.append({"role": "system", "content": SYSTEM_PROMPT})
+    messages.append(_user_goal_message(goal, store, images))
     cited_paths = list(images)
     image_fields: list[str] = []
     steps = 0
@@ -140,17 +154,36 @@ def run_agent(
     while True:
         if steps >= max_steps:
             return _stop(
-                STOP_MAX_STEPS, steps, cost_usd, cited_paths, image_fields, trace_path
+                STOP_MAX_STEPS,
+                steps,
+                cost_usd,
+                cited_paths,
+                image_fields,
+                trace_path,
+                verbose,
+                messages,
             )
         if cost_usd >= max_cost_usd:
             return _stop(
-                STOP_MAX_COST, steps, cost_usd, cited_paths, image_fields, trace_path
+                STOP_MAX_COST,
+                steps,
+                cost_usd,
+                cited_paths,
+                image_fields,
+                trace_path,
+                verbose,
+                messages,
             )
 
+        if verbose:
+            report_context(steps + 1, cost_usd, messages)
         result = client.complete(messages, TOOL_SPECS)
         steps += 1
-        cost_usd += _usage_cost(result.get("usage"))
+        step_cost_usd = _usage_cost(result.get("usage"))
+        cost_usd += step_cost_usd
         tool_calls = result.get("tool_calls") or []
+        if verbose:
+            report_action(cost_usd, step_cost_usd, result)
 
         if trace_path is not None:
             append_trace(
@@ -174,6 +207,8 @@ def run_agent(
                     cited_paths,
                     image_fields,
                     trace_path,
+                    verbose,
+                    messages,
                 )
             return _finish(
                 answer,
@@ -183,6 +218,8 @@ def run_agent(
                 cited_paths,
                 image_fields,
                 trace_path,
+                verbose,
+                messages,
             )
 
         signature = _tool_signature(tool_calls)
@@ -199,6 +236,8 @@ def run_agent(
                 cited_paths,
                 image_fields,
                 trace_path,
+                verbose,
+                messages,
             )
 
         messages.append(_assistant_message(result))
@@ -218,16 +257,25 @@ def run_agent(
                     "content": observation.text,
                 }
             )
+            attached_image = None
             if observation.image_host_path is not None:
-                visible = observation.virtual_path or "image"
+                attached_image = observation.virtual_path or "image"
+                visible = f"Visible image: {attached_image}"
                 messages.append(
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": f"Visible image: {visible}"},
+                            {"type": "text", "text": visible},
                             image_part(observation.image_host_path),
                         ],
                     }
+                )
+            if verbose:
+                report_tool(
+                    call["name"],
+                    call.get("arguments") or "",
+                    observation.text,
+                    attached_image,
                 )
             if trace_path is not None:
                 append_trace(
@@ -248,6 +296,8 @@ def _stop(
     cited_paths: list[str],
     image_fields: list[str],
     trace_path: Path | None,
+    verbose: bool,
+    messages: list[dict[str, Any]],
 ) -> AgentResult:
     return _finish(
         STOP_MESSAGES[reason],
@@ -257,6 +307,8 @@ def _stop(
         cited_paths,
         image_fields,
         trace_path,
+        verbose,
+        messages,
     )
 
 
@@ -268,7 +320,12 @@ def _finish(
     cited_paths: list[str],
     image_fields: list[str],
     trace_path: Path | None,
+    verbose: bool,
+    messages: list[dict[str, Any]],
 ) -> AgentResult:
+    messages.append({"role": "assistant", "content": answer})
+    if verbose:
+        report_stop(reason, steps, cost_usd)
     if trace_path is not None:
         append_trace(
             trace_path,

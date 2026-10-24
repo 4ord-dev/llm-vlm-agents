@@ -1,0 +1,7 @@
+# House rule 005
+
+- Rule: Store a screenshot only when the text alone would miss the layout.
+- Asked by: Samir
+- Applies at: campus hall
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name campus hall.

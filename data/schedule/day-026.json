@@ -1,0 +1,35 @@
+{
+  "date": "2026-03-27",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "paper tray order with Priya",
+      "place": "kitchen table"
+    },
+    {
+      "time": "10:00",
+      "title": "weekend study plan with Noah",
+      "place": "workshop bench"
+    },
+    {
+      "time": "12:00",
+      "title": "glossary page with Helena",
+      "place": "reading room"
+    },
+    {
+      "time": "14:00",
+      "title": "timer preset review with Ivan",
+      "place": "campus hall"
+    },
+    {
+      "time": "16:00",
+      "title": "monitor calibration with Mina",
+      "place": "balcony"
+    },
+    {
+      "time": "18:00",
+      "title": "backup disk rotation with Jordan",
+      "place": "studio corner"
+    }
+  ]
+}

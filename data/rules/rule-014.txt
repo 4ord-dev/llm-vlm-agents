@@ -1,0 +1,7 @@
+# House rule 014
+
+- Rule: Prefer a short list over a paragraph when the facts are parallel.
+- Asked by: Marek
+- Applies at: balcony
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name balcony.

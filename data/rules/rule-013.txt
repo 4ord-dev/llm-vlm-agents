@@ -1,0 +1,7 @@
+# House rule 013
+
+- Rule: Leave a finished item marked done instead of deleting the line.
+- Asked by: Olena
+- Applies at: campus hall
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name campus hall.

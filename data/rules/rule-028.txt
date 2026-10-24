@@ -1,0 +1,7 @@
+# House rule 028
+
+- Rule: Stop after the asked fact instead of adding a nearby fact.
+- Asked by: Helena
+- Applies at: reading room
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name reading room.

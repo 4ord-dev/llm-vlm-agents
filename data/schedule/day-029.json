@@ -1,0 +1,35 @@
+{
+  "date": "2026-06-03",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "timer preset review with Ivan",
+      "place": "campus hall"
+    },
+    {
+      "time": "10:00",
+      "title": "monitor calibration with Mina",
+      "place": "balcony"
+    },
+    {
+      "time": "12:00",
+      "title": "backup disk rotation with Jordan",
+      "place": "studio corner"
+    },
+    {
+      "time": "14:00",
+      "title": "course reading queue with Chen",
+      "place": "desk"
+    },
+    {
+      "time": "16:00",
+      "title": "keyboard layout notes with Olena",
+      "place": "library"
+    },
+    {
+      "time": "18:00",
+      "title": "headset mute check with Marek",
+      "place": "kitchen table"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-02-20",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "whiteboard photo list with Ivan",
+      "place": "workshop bench"
+    },
+    {
+      "time": "10:00",
+      "title": "package update notes with Mina",
+      "place": "reading room"
+    },
+    {
+      "time": "12:00",
+      "title": "office-hours questions with Jordan",
+      "place": "campus hall"
+    },
+    {
+      "time": "14:00",
+      "title": "diagram sketch with Chen",
+      "place": "balcony"
+    },
+    {
+      "time": "16:00",
+      "title": "citation checklist with Olena",
+      "place": "studio corner"
+    },
+    {
+      "time": "18:00",
+      "title": "audio level sheet with Marek",
+      "place": "desk"
+    }
+  ]
+}

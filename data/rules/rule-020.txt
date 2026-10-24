@@ -1,0 +1,7 @@
+# House rule 020
+
+- Rule: Keep a change on this machine until the owner asks to publish it.
+- Asked by: Mina
+- Applies at: reading room
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name reading room.

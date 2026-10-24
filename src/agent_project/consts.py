@@ -1,6 +1,6 @@
 """Limits and names for one agent run."""
 
-MAX_MODEL_STEPS = 12
+MAX_MODEL_STEPS = 50
 MAX_RUN_COST_USD = 0.10
 MAX_READ_CHARS = 8000
 MAX_SEARCH_HITS = 20
@@ -11,7 +11,7 @@ MAX_FACT_LABEL_CHARS = 64
 MAX_FACT_VALUE_CHARS = 160
 MAX_QUERY_CHARS = 128
 MAX_VIRTUAL_PATH_CHARS = 512
-MAX_REPEAT_TOOL_CALLS = 3
+MAX_REPEAT_TOOL_CALLS = 15
 MAX_ATTACHED_IMAGES = 4
 
 DEFAULT_MOUNT_VIRTUAL = "/data"
@@ -43,10 +43,11 @@ STOP_MAX_STEPS = "max_steps"
 STOP_MAX_COST = "max_cost"
 STOP_REPEATED_TOOLS = "repeated_tools"
 STOP_EMPTY_REPLY = "empty_reply"
+EXIT_INTERRUPTED = 130
 
 STOP_MESSAGES = {
-    STOP_MAX_STEPS: "Stopped: reached the 12-step model limit.",
-    STOP_MAX_COST: "Stopped: reached the USD 0.10 run limit.",
+    STOP_MAX_STEPS: f"Stopped: reached the {MAX_MODEL_STEPS}-step model limit.",
+    STOP_MAX_COST: f"Stopped: reached the USD {MAX_RUN_COST_USD:.2f} run limit.",
     STOP_REPEATED_TOOLS: "Stopped: the same tool call repeated without progress.",
     STOP_EMPTY_REPLY: "Stopped: the model returned an empty reply.",
 }

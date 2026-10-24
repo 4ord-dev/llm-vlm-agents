@@ -1,0 +1,35 @@
+{
+  "date": "2026-01-04",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "monitor calibration with Mina",
+      "place": "balcony"
+    },
+    {
+      "time": "10:00",
+      "title": "backup disk rotation with Jordan",
+      "place": "studio corner"
+    },
+    {
+      "time": "12:00",
+      "title": "course reading queue with Chen",
+      "place": "desk"
+    },
+    {
+      "time": "14:00",
+      "title": "keyboard layout notes with Olena",
+      "place": "library"
+    },
+    {
+      "time": "16:00",
+      "title": "headset mute check with Marek",
+      "place": "kitchen table"
+    },
+    {
+      "time": "18:00",
+      "title": "standing-desk height with Samir",
+      "place": "workshop bench"
+    }
+  ]
+}

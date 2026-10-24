@@ -1,0 +1,35 @@
+{
+  "date": "2026-05-11",
+  "blocks": [
+    {
+      "time": "08:00",
+      "title": "repo branch map with Mina",
+      "place": "kitchen table"
+    },
+    {
+      "time": "10:00",
+      "title": "flash-card deck with Jordan",
+      "place": "workshop bench"
+    },
+    {
+      "time": "12:00",
+      "title": "power-strip labels with Chen",
+      "place": "reading room"
+    },
+    {
+      "time": "14:00",
+      "title": "notebook index with Olena",
+      "place": "campus hall"
+    },
+    {
+      "time": "16:00",
+      "title": "calendar hold list with Marek",
+      "place": "balcony"
+    },
+    {
+      "time": "18:00",
+      "title": "cable tray cleanup with Samir",
+      "place": "studio corner"
+    }
+  ]
+}

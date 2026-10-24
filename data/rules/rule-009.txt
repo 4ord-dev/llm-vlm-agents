@@ -1,0 +1,7 @@
+# House rule 009
+
+- Rule: Check the date on a schedule file before calling it tonight.
+- Asked by: Ivan
+- Applies at: library
+- Scope: this desk and the mounted store only.
+- Check: Before acting, restate the rule in one line and name library.
